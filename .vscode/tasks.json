@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C/C++: g++ build active project",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-Iinclude",
+                "-g",
+                "-I${workspaceFolder}/include",          // 1. Говорим, где искать .h файлы
+                "${workspaceFolder}/src/*.cpp",         // 2. Берем все .cpp из папки src/
+                "${workspaceFolder}/main.cpp",          // 3. Берем main.cpp из корня
+                "-o",
+                "${workspaceFolder}/MyAnimalProject"    // 4. Имя итоговой программы
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }       
+    ]
+}

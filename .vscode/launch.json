@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch AnlmalsProject", // Название может быть любым 
+            "type": "cppdbg",
+            "request": "launch",
+            //
+            "program": "${workspaceFolder}/MyAnimalProject", // <-- САМОЕ ВАЖНОЕ: 
+            //Путь к программе 
+            "args": [], 
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}", // Текущая рабочая директория
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            // ВАЖНО: Убедитесь, что имя задачи совпадает с 'label' в tasks.json
+            "preLaunchTask": "C/C++: g++ build active project" 
+        }
+    ]
+}
